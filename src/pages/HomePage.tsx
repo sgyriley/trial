@@ -1,6 +1,64 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { convertCompilerOptionsFromJson } from 'typescript';
+import { CategoryButton } from '../components/CategoryButton';
+import { MovieCard } from '../components/MovieCard';
+import popcornImg from '../assets/images/popcorn.webp';
+import seatsImg from '../assets/images/seats.webp';
+import tropImg from '../assets/images/trophy.jpeg';
+import beingImg from '../assets/images/cinema.webp';
+
+const API_KEY = '605314d558a35276467abf633ebcce8f';
+
+export type Category = {
+  id: number;
+  label: string;
+  url: string;
+  image: string;
+};
+
+const CATEGORY_LIST = [
+  { id: 0, label: '인기있는영화', url: '/popular', image: popcornImg , title:"Popular Movie"},
+  { id: 1, label: '현재 상영작', url: '/now_playing', image: seatsImg, title:"Today's Special"},
+  { id: 2, label: '영화 순위', url: '/top_rated', image: tropImg, title: "Top Rated"},
+  { id: 3, label: '상영 예정작', url: '/upcoming', image: beingImg , title: "Upcoming"},
+];
+
+export type Movie = {
+  id: number;
+  title: string;
+  overview: string;
+  poster_path: string;
+  vote_average: number;
+};
 
 export const HomePage = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [movies, setMovies] = useState<Movie[]>([]);
+  const [categoryIndex, setCategoryIndex] = useState(0);
+
+  const setCategory = (index: number) => {
+    setCategoryIndex(index);
+  };
+
+  const getData = async (categoryIndex: number) => {
+    const url = `https://api.themoviedb.org/3/movie${CATEGORY_LIST[categoryIndex].url}?api_key=${API_KEY}&language=ko-KR&page=1`;
+    const response = await fetch(url);
+    console.log(response);
+    if (response.status === 200) {
+      const data = await response.json();
+      console.log(data);
+      setMovies(data.results);
+    } else {
+      throw new Error('데이터를 받아오지 못했습니다.');
+    }
+    console.log(movies);
+    setIsLoading(false);
+  };
+
+  useEffect(() => {
+    getData(categoryIndex);
+  }, [categoryIndex]);
+
   return (
     <div className="m-4 space-y-10">
       <div className="space-y-4">
@@ -15,46 +73,19 @@ export const HomePage = () => {
       <div className="space-y-4">
         <div className="text-2xl font-bold">Category</div>
 
-        <div className="flex space-x-6">
-          <div>
-            <img
-              src="https://images.unsplash.com/photo-1563612116625-3012372fccce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHN1c2hpfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=1000&q=60"
-              alt=""
-              className="w-20 h-20 object-cover rounded-full"
+        <div className="flex space-x-6" style={{height: "150px",}}>
+          {CATEGORY_LIST.map((data) => (
+            <CategoryButton
+              key={data.id}
+              category={data}
+              onClick={setCategory}
+              isSelected={data.id === categoryIndex}
             />
-            <div className="text-center">일식</div>
-          </div>
-
-          <div>
-            <img
-              src="https://images.unsplash.com/photo-1604632910793-c0601f361b34?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZGltc3VtfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=1000&q=60"
-              alt=""
-              className="w-20 h-20 object-cover rounded-full"
-            />
-            <div className="text-center">중식</div>
-          </div>
-
-          <div>
-            <img
-              src="https://images.unsplash.com/photo-1600289031464-74d374b64991?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmliaW1iYXB8ZW58MHx8MHx8&auto=format&fit=crop&w=1000&q=60"
-              alt=""
-              className="w-20 h-20 object-cover rounded-full"
-            />
-            <div className="text-center">한식</div>
-          </div>
-
-          <div>
-            <img
-              src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80"
-              alt=""
-              className="w-20 h-20 object-cover rounded-full"
-            />
-            <div className="text-center">양식</div>
-          </div>
+          ))}
         </div>
       </div>
 
-      <div>
+      {/* <div>
         <div className="text-2xl font-bold mb-4">List</div>
         <div className="p-4 border border-gray-300 rounded-md">
           <div>
@@ -82,31 +113,12 @@ export const HomePage = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className="space-y-4">
-        <div className="text-3xl text-black font-bold">Today's Special</div>
-        <div className="flex flex-row space-x-4">
-          <img
-            src="https://images.unsplash.com/photo-1493770348161-369560ae357d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-            alt=""
-            className="w-28 h-36 object-cover rounded-2xl"
-          />
-          <div className="space-y-1">
-            <div className="text-lg font-bold">식당 이름</div>
-            <div className="space-y-0">
-              <div className="text-base font-normal text-gray-600">
-                말이 필요 없는 서울 최고의
-              </div>
-              <div className="text-base font-normal text-gray-600">
-                식당 중 하나
-              </div>
-            </div>
-            <div className="text-base font-normal text-gray-300">
-              서울시 강남구 청담동
-            </div>
-          </div>
-        </div>
+        <div className="text-3xl text-black font-bold">{CATEGORY_LIST[categoryIndex].title}</div>
+        {!isLoading &&
+          movies.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
       </div>
 
       <div className="border-t-2 border-gray-200 border-solid rounded-2xl"></div>
