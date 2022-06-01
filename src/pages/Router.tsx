@@ -3,6 +3,8 @@ import { Redirect, Route, Switch } from 'react-router';
 import { LoginPage } from './LoginPage';
 import { HomePage } from './HomePage';
 import { SignupPage } from './SignupPage';
+import { PartnerPage } from './PartnerPage';
+
 
 export const Router = () => {
   return (
@@ -10,6 +12,7 @@ export const Router = () => {
       <Route path="/signup" component={SignupPage} />
       <Route path="/login" component={LoginPage} />
       <Route path="/" component={HomePage} exact />
+      <Route path="/partner" component={PartnerPage} />
       <Route path="/">
         <Redirect to="/" />
       </Route>
