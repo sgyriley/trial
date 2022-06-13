@@ -1,5 +1,6 @@
 import React from 'react';
 import { TextField } from '../components/TextField';
+import { useHistory } from 'react-router-dom';
 
 export const SignupPage = () => {
   return (

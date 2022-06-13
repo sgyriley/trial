@@ -19,7 +19,7 @@ export const PartnerPage = () => {
     for (let i = 0; i < users.length; i++) {
       if (email === users[i].email && password === users[i].password) {
         alert('로그인 성공');
-        replace('/');
+        push('/main');
         return;
       } else if (email === users[i].email && password !== users[i].password) {
         alert('비밀번호가 틀립니다');
@@ -39,6 +39,19 @@ export const PartnerPage = () => {
           <TextField
             label="Email Address"
             placeholder="이메일을 입력해주세요."
+            value={email}
+            onChange={(event) => {
+              setEmail(event.target.value);
+            }}
+          />
+          <TextField
+            label="비밀번호"
+            placeholder="비밀번호를 입력해주세요."
+            type="password"
+            value={password}
+            onChange={(event) => {
+              setPassword(event.target.value);
+            }}
           />
           <TextField
             label="Phone Number"

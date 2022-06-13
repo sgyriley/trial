@@ -19,7 +19,7 @@ export const LoginPage = () => {
     for (let i = 0; i < users.length; i++) {
       if (email === users[i].email && password === users[i].password) {
         alert('로그인 성공');
-        replace('/');
+        push('/main');
         return;
       } else if (email === users[i].email && password !== users[i].password) {
         alert('비밀번호가 틀립니다');
