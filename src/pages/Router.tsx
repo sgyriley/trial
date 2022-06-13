@@ -10,6 +10,7 @@ import { YogaBallPage } from './YogaBallPage';
 import { ChattingPage } from './ChattingPage';
 import { SearchPage } from './SearchPage';
 import { DumbBellPage } from './DumbBellPage';
+import { MyPage } from './MyPage';
 
 export const Router = () => {
   return (
@@ -25,6 +26,7 @@ export const Router = () => {
         <Route path="/chat" component={ChattingPage} />
         <Route path="/search" component={SearchPage} />
         <Route path="/dumbbell" component={DumbBellPage} />
+        <Route path='/mypage' component={MyPage} />
         <Route path="/">
           <Redirect to="/" />
         </Route>
