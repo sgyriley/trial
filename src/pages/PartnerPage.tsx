@@ -30,29 +30,34 @@ export const PartnerPage = () => {
   };
 
   return (
-    <div className="m-4">
-      <div className="text-3xl font-bold mb-10 text-center">Partner 신청</div>
+    <div className="bg-white h-full w-full px-5 pt-6 pb-20 overflow-y-auto">
+      <div className="m-4">
+        <div className="text-3xl font-bold mb-10 text-center">Partner 신청</div>
 
-      <div className="space-y-2">
-        <TextField label="Name" placeholder="이름을 입력해주세요." />
-        <TextField label="Email Address" placeholder="이메일을 입력해주세요." />
-        <TextField
-          label="Phone Number"
-          placeholder="전화번호를 입력해주세요."
-        />
-        <TextField
-          label="유형선택"
-          placeholder="대여 가능한 장비와 종류를 입력해주세요."
-        />
-      </div>
-      <div className="mt-10">
-        <div
-          className=" rounded-md bg-cyan-500 text-white text-center py-4"
-          onClick={() => {
-            checkUser();
-          }}
-        >
-          상담신청
+        <div className="space-y-2">
+          <TextField label="Name" placeholder="이름을 입력해주세요." />
+          <TextField
+            label="Email Address"
+            placeholder="이메일을 입력해주세요."
+          />
+          <TextField
+            label="Phone Number"
+            placeholder="전화번호를 입력해주세요."
+          />
+          <TextField
+            label="유형선택"
+            placeholder="대여 가능한 장비와 종류를 입력해주세요."
+          />
+        </div>
+        <div className="mt-10">
+          <div
+            className=" rounded-md bg-cyan-500 text-white text-center py-4"
+            onClick={() => {
+              checkUser();
+            }}
+          >
+            상담신청
+          </div>
         </div>
       </div>
     </div>

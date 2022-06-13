@@ -6,8 +6,10 @@ import { SignupPage } from './SignupPage';
 import { PartnerPage } from './PartnerPage';
 import { MainPage } from './MainPage';
 import { CategoryPage } from './CategoryPage';
-import { GymBallPage } from './GymBallPage'
+import { YogaBallPage } from './YogaBallPage';
 import { ChattingPage } from './ChattingPage';
+import { SearchPage } from './SearchPage';
+import { DumbBellPage } from './DumbBellPage';
 
 export const Router = () => {
   return (
@@ -19,8 +21,10 @@ export const Router = () => {
         <Route path="/partner" component={PartnerPage} />
         <Route path="/main" component={MainPage} />
         <Route path="/category" component={CategoryPage} />
-        <Route path="/gymball" component={GymBallPage} />
-        <Route path='/chat' component={ChattingPage} />
+        <Route path="/yogaball" component={YogaBallPage} />
+        <Route path="/chat" component={ChattingPage} />
+        <Route path="/search" component={SearchPage} />
+        <Route path="/dumbbell" component={DumbBellPage} />
         <Route path="/">
           <Redirect to="/" />
         </Route>
