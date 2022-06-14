@@ -1,7 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import { BrowserRouter, Route, Router, Switch } from 'react-router-dom';
+import { ScrollToTop } from '../components/ScrollToTop';
 
 export const MainPage = () => {
   return (
+    <BrowserRouter>
+    <ScrollToTop />
+    <Switch>
+      <Route path="/" component={Router} />
+    </Switch>
     <div>
       <div className="bg-white h-full w-full px-5 pt-6 pb-20 overflow-y-auto">
         <div className="mb-3">
@@ -50,7 +57,7 @@ export const MainPage = () => {
         </div>
         <div className="mb-5">
           <a
-            href="#"
+            href="/dumbbell"
             className="block rounded-lg relative p-5 transform transition-all duration-300 scale-100 hover:scale-95"
             style={{
               background:
@@ -95,7 +102,7 @@ export const MainPage = () => {
         <div className="flex -mx-1 mb-5">
           <div className="w-1/2 px-1">
             <a
-              href="#"
+              href="/dumbbell"
               className="block mb-2 p-5 rounded overflow-hidden transform transition-all duration-300 scale-100 hover:scale-95"
               style={{
                 background:
@@ -109,7 +116,7 @@ export const MainPage = () => {
               </h3>
             </a>
             <a
-              href="#"
+              href="/dumbbell"
               className="block mb-2 p-5 rounded overflow-hidden transform transition-all duration-300 scale-100 hover:scale-95"
               style={{
                 background:
@@ -139,7 +146,7 @@ export const MainPage = () => {
               </h3>
             </a>
             <a
-              href="#"
+              href="/yogaball"
               className="block mb-2 p-5 rounded overflow-hidden transform transition-all duration-300 scale-100 hover:scale-95"
               style={{
                 background:
@@ -159,7 +166,7 @@ export const MainPage = () => {
         </div>
         <div>
           <a
-            href="#"
+            href="/dumbbell"
             className="flex w-full transform transition-all duration-300 scale-100 hover:scale-95"
           >
             <div
@@ -194,7 +201,7 @@ export const MainPage = () => {
         <hr className="border-gray-200 my-3" />
         <div>
           <a
-            href="#"
+            href="/dumbbell"
             className="flex w-full transform transition-all duration-300 scale-100 hover:scale-95"
           >
             <div
@@ -298,5 +305,6 @@ export const MainPage = () => {
         </div>
       </div>
     </div>
+    </BrowserRouter>
   );
 };

@@ -18,7 +18,7 @@ function App() {
 
       <div className="bg-white absolute bottom-0 w-full border-t border-gray-200 flex">
         <a
-          href="#"
+          href="/main"
           className="flex flex-grow items-center justify-center p-2 text-indigo-500 hover:text-indigo-500"
         >
           <div className="text-center">
@@ -31,7 +31,7 @@ function App() {
           </div>
         </a>
         <a
-          href="#"
+          href="/category"
           className="flex flex-grow items-center justify-center p-2 text-gray-500 hover:text-indigo-500"
         >
           <div className="text-center">
@@ -44,7 +44,7 @@ function App() {
           </div>
         </a>
         <a
-          href="#"
+          href="/search"
           className="flex flex-grow items-center justify-center p-2 text-gray-500 hover:text-indigo-500"
         >
           <div className="text-center">
@@ -57,7 +57,7 @@ function App() {
           </div>
         </a>
         <a
-          href="#"
+          href="/mypage"
           className="flex flex-grow items-center justify-center p-2 text-gray-500 hover:text-indigo-500"
         >
           <div className="text-center">

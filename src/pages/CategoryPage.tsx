@@ -1,10 +1,20 @@
 import React from 'react';
+import { BrowserRouter, Route, Router, Switch } from 'react-router-dom';
+import { ScrollToTop } from '../components/ScrollToTop';
+
 
 export const CategoryPage = () => {
   return (
+    <BrowserRouter>
+    <ScrollToTop />
+    <Switch>
+      <Route path="/" component={Router} />
+    </Switch>
     <div className="space-y-4">
       <div className="text-3xl font-bold mb-14">Category</div>
 
+
+<a href=""></a>
       <div>
         <div className="flex flex-col space-y-12">
           <div className="flex flex-row space-x-12">
@@ -17,6 +27,7 @@ export const CategoryPage = () => {
               <div className="font-bold mt-2 text-center">YOGA MAT</div>
             </div>
 
+            <a href="/dumbbell">
             <div>
               <img
                 src="https://images.unsplash.com/photo-1641582858581-7eb78baec60d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1914&q=80"
@@ -25,7 +36,9 @@ export const CategoryPage = () => {
               />
               <div className="font-bold mt-2 text-center">DUMB BELL</div>
             </div>
+            </a>
 
+            <a href="/yogaball">
             <div>
               <div>
                 <img
@@ -36,7 +49,10 @@ export const CategoryPage = () => {
                 <div className="font-bold mt-2 text-center">YOGA BALL</div>
               </div>
             </div>
+            </a>
           </div>
+            
+            
 
           <div className="flex flex-ro space-x-12">
             <div>
@@ -90,5 +106,6 @@ export const CategoryPage = () => {
         </div>
       </div>
     </div>
+    </BrowserRouter>
   );
 };

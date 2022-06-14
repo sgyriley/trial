@@ -63,9 +63,11 @@ export const LoginPage = () => {
           >
             로그인
           </div>
+          <a href="/signup">
           <div className=" rounded-md text-center py-4 text-gray-800 border border-gray-800 mt-2">
             회원가입
           </div>
+          </a>
         </div>
       </div>
     </div>
