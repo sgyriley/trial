@@ -17,7 +17,7 @@ export const CategoryPage = () => {
 <a href=""></a>
       <div>
         <div className="flex flex-col space-y-12">
-          <div className="flex flex-row space-x-12">
+          <div className="flex flex-row space-x-6">
             <div>
               <img
                 src="https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2960&q=80"
@@ -54,7 +54,7 @@ export const CategoryPage = () => {
             
             
 
-          <div className="flex flex-ro space-x-12">
+          <div className="flex flex-row space-x-6">
             <div>
               <img
                 src="https://images.unsplash.com/photo-1605021272777-72805ea0c9c8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2775&q=80"
@@ -84,7 +84,7 @@ export const CategoryPage = () => {
             </div>
           </div>
 
-          <div className="flex flex-row space-x-12">
+          <div className="flex flex-row space-x-6">
             <div>
               <img
                 src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHVzaHVwfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"

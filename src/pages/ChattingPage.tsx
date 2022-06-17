@@ -1,41 +1,32 @@
 import React from 'react';
-
+import { Chat } from '../components/Chat';
 export const ChattingPage = () => {
   return (
-    <div>
-     <div className="w-full grid justify-items-end">
-        <div className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-cyan-500 text-white ">
+    <>
+      <div className="bg-white h-full w-full px-5 pt-6 pb-20 overflow-y-auto">
+        <Chat isMe='yes'>
           안녕하세요!
-        </div>
-    </div>
-      <div>
-        <div className="mt-2 mb-2 items-start px-4 py-2 text-center rounded-lg inline-block rounded-bl-none bg-gray-300 text-gray-600">
+        </Chat>
+        <Chat>
           안녕하세요
-        </div>
-      </div>
-      <div className="w-full grid justify-items-end">
-        <div className="mb-2 px-4 py-2 rounded-lg inline-block rounded-br-none bg-cyan-500 text-white ">
+        </Chat>
+        <Chat isMe='yes'>
           혹시 이거 아직 계약 가능한가요??
-        </div>
-      </div>
-      <div>
-        <div className="mb-0.5 items-start px-4 py-2 text-center rounded-lg inline-block rounded-bl-none bg-gray-300 text-gray-600">
+        </Chat>
+        <Chat>
           네 가능합니다!
-        </div>
-      </div>
-      <div>
-        <div className="items-start px-4 py-2 text-center rounded-lg inline-block rounded-bl-none bg-gray-300 text-gray-600">
-          사용 기간은 얼마로 하실 예정인가요?
-        </div>
-      </div>
-      <div>
-        <div className="items-start px-4 py-52 text-center rounded-lg inline-block rounded-bl-none ">
-        </div>
-      </div>
+        </Chat>
+        <Chat bottom='2'>
+          사용 기간은 얼마로 하실까요?
+        </Chat>
 
-
-      <div>
-        <form className="flex items-end">
+        <div>
+          <div className="items-start px-4 py-52 text-center rounded-lg inline-block rounded-bl-none ">
+          </div>
+        </div>
+      </div>
+      <div className='absolute bottom-0 w-full px-5'>
+        <form className="w-full">
           <label htmlFor="chat" className="sr-only">
             Your message
           </label>
@@ -96,8 +87,7 @@ export const ChattingPage = () => {
           </div>
         </form>
       </div>
-    </div>
-
+    </>
     //   <div className="flex-1 p:2 sm:p-6 justify-between flex flex-col h-screen">
     //       <div className="flex sm:items-center justify-between py-3 border-b-2 border-gray-200">
     //           <div className="relative flex items-center space-x-4">
@@ -107,7 +97,7 @@ export const ChattingPage = () => {
     //                           <circle cx="8" cy="8" r="8" fill="currentColor"></circle>
     //                       </svg>
     //                   </span>
-    //                   <img src="" alt="" className="w-10 sm:w-16 h-10 sm:h-16 rounded-full"/>
+    //                   <img src="" alt="" className="w-10 sm:w-16 h-10 sm:h-16 rounded-full" />
     //                   </div>
     //               <div className="flex flex-col leading-tight">
     //                   <div className="text-2xl mt-1 flex items-center">
@@ -140,7 +130,7 @@ export const ChattingPage = () => {
     //                   <div className="flex flex-col space-y-2 text-xs max-w-xs mx-2 order-2 items-start">
     //                       <div><span className="px-4 py-2 rounded-lg inline-block rounded-bl-none bg-gray-300 text-gray-600">Can be verified on any platform using docker</span></div>
     //                   </div>
-    //                   <img src="https://images.unsplash.com/photo-1549078642-b2ba4bda0cdb?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=3&amp;w=144&amp;h=144" alt="My profile" className="w-6 h-6 rounded-full order-1"/>
+    //                   <img src="https://images.unsplash.com/photo-1549078642-b2ba4bda0cdb?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=3&amp;w=144&amp;h=144" alt="My profile" className="w-6 h-6 rounded-full order-1" />
     //                   </div>
     //           </div>
     //           <div className="chat-message">
@@ -148,7 +138,7 @@ export const ChattingPage = () => {
     //                   <div className="flex flex-col space-y-2 text-xs max-w-xs mx-2 order-1 items-end">
     //                       <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white ">Your error message says permission denied, npm global installs must be given root privileges.</span></div>
     //                   </div>
-    //                   <img src="https://images.unsplash.com/photo-1590031905470-a1a1feacbb0b?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=3&amp;w=144&amp;h=144" alt="My profile" className="w-6 h-6 rounded-full order-2"/>
+    //                   <img src="https://images.unsplash.com/photo-1590031905470-a1a1feacbb0b?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=3&amp;w=144&amp;h=144" alt="My profile" className="w-6 h-6 rounded-full order-2" />
     //                   </div>
     //           </div>
     //           <div className="chat-message">
@@ -164,7 +154,7 @@ export const ChattingPage = () => {
     //                           </span>
     //                       </div>
     //                   </div>
-    //                   <img src="https://images.unsplash.com/photo-1549078642-b2ba4bda0cdb?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=3&amp;w=144&amp;h=144" alt="My profile" className="w-6 h-6 rounded-full order-1"/>
+    //                   <img src="https://images.unsplash.com/photo-1549078642-b2ba4bda0cdb?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=3&amp;w=144&amp;h=144" alt="My profile" className="w-6 h-6 rounded-full order-1" />
     //                   </div>
     //           </div>
     //           <div className="chat-message">
@@ -172,7 +162,7 @@ export const ChattingPage = () => {
     //                   <div className="flex flex-col space-y-2 text-xs max-w-xs mx-2 order-1 items-end">
     //                       <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white ">Any updates on this issue? I'm getting the same error when trying to install devtools. Thanks</span></div>
     //                   </div>
-    //                   <img src="https://images.unsplash.com/photo-1590031905470-a1a1feacbb0b?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=3&amp;w=144&amp;h=144" alt="My profile" className="w-6 h-6 rounded-full order-2"/>
+    //                   <img src="https://images.unsplash.com/photo-1590031905470-a1a1feacbb0b?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=3&amp;w=144&amp;h=144" alt="My profile" className="w-6 h-6 rounded-full order-2" />
     //                   </div>
     //           </div>
     //           <div className="chat-message">
@@ -180,7 +170,7 @@ export const ChattingPage = () => {
     //                   <div className="flex flex-col space-y-2 text-xs max-w-xs mx-2 order-2 items-start">
     //                       <div><span className="px-4 py-2 rounded-lg inline-block rounded-bl-none bg-gray-300 text-gray-600">Thanks for your message David. I thought I'm alone with this issue. Please, 👍 the issue to support it :)</span></div>
     //                   </div>
-    //                   <img src="https://images.unsplash.com/photo-1549078642-b2ba4bda0cdb?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=3&amp;w=144&amp;h=144" alt="My profile" className="w-6 h-6 rounded-full order-1"/>
+    //                   <img src="https://images.unsplash.com/photo-1549078642-b2ba4bda0cdb?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=3&amp;w=144&amp;h=144" alt="My profile" className="w-6 h-6 rounded-full order-1" />
     //                   </div>
     //           </div>
     //           <div className="chat-message">
@@ -189,7 +179,7 @@ export const ChattingPage = () => {
     //                       <div><span className="px-4 py-2 rounded-lg inline-block bg-blue-600 text-white ">Are you using sudo?</span></div>
     //                       <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white ">Run this command sudo chown -R `whoami` /Users//.npm-global/ then install the package globally without using sudo</span></div>
     //                   </div>
-    //                   <img src="https://images.unsplash.com/photo-1590031905470-a1a1feacbb0b?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=3&amp;w=144&amp;h=144" alt="My profile" className="w-6 h-6 rounded-full order-2"/>
+    //                   <img src="https://images.unsplash.com/photo-1590031905470-a1a1feacbb0b?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=3&amp;w=144&amp;h=144" alt="My profile" className="w-6 h-6 rounded-full order-2" />
     //                   </div>
     //           </div>
     //           <div className="chat-message">
@@ -198,7 +188,7 @@ export const ChattingPage = () => {
     //                       <div><span className="px-4 py-2 rounded-lg inline-block bg-gray-300 text-gray-600">It seems like you are from Mac OS world. There is no /Users/ folder on linux 😄</span></div>
     //                       <div><span className="px-4 py-2 rounded-lg inline-block rounded-bl-none bg-gray-300 text-gray-600">I have no issue with any other packages installed with root permission globally.</span></div>
     //                   </div>
-    //                   <img src="https://images.unsplash.com/photo-1549078642-b2ba4bda0cdb?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=3&amp;w=144&amp;h=144" alt="My profile" className="w-6 h-6 rounded-full order-1"/>
+    //                   <img src="https://images.unsplash.com/photo-1549078642-b2ba4bda0cdb?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=3&amp;w=144&amp;h=144" alt="My profile" className="w-6 h-6 rounded-full order-1" />
     //                   </div>
     //           </div>
     //           <div className="chat-message">
@@ -206,7 +196,7 @@ export const ChattingPage = () => {
     //                   <div className="flex flex-col space-y-2 text-xs max-w-xs mx-2 order-1 items-end">
     //                       <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white ">yes, I have a mac. I never had issues with root permission as well, but this helped me to solve the problem</span></div>
     //                   </div>
-    //                   <img src="https://images.unsplash.com/photo-1590031905470-a1a1feacbb0b?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=3&amp;w=144&amp;h=144" alt="My profile" className="w-6 h-6 rounded-full order-2"/>
+    //                   <img src="https://images.unsplash.com/photo-1590031905470-a1a1feacbb0b?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=3&amp;w=144&amp;h=144" alt="My profile" className="w-6 h-6 rounded-full order-2" />
     //                   </div>
     //           </div>
     //           <div className="chat-message">
@@ -216,7 +206,7 @@ export const ChattingPage = () => {
     //                       <div><span className="px-4 py-2 rounded-lg inline-block bg-gray-300 text-gray-600">I also have this issue, Here is what I was doing until now: #1076</span></div>
     //                       <div><span className="px-4 py-2 rounded-lg inline-block rounded-bl-none bg-gray-300 text-gray-600">even i am facing</span></div>
     //                   </div>
-    //                   <img src="https://images.unsplash.com/photo-1549078642-b2ba4bda0cdb?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=3&amp;w=144&amp;h=144" alt="My profile" className="w-6 h-6 rounded-full order-1"/>
+    //                   <img src="https://images.unsplash.com/photo-1549078642-b2ba4bda0cdb?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=3&amp;w=144&amp;h=144" alt="My profile" className="w-6 h-6 rounded-full order-1" />
     //                   </div>
     //           </div>
     //       </div>
@@ -257,5 +247,6 @@ export const ChattingPage = () => {
     //               </input></div>
     //       </div>
     //   </div>
+
   );
 };

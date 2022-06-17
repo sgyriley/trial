@@ -2,7 +2,7 @@ import React from 'react';
 
 export const MyPage = () => {
   return (
-    <div className="bg-white h-full w-full px-5 pt-6 pb-20 overflow-y-auto">
+    <div className="bg-white  w-full px-5 pt-6 pb-20 overflow-y-auto">
       <div className="space-y-4">
         <div className="text-2xl font-bold">My Page</div>
 
@@ -39,36 +39,36 @@ export const MyPage = () => {
         <div className="border-t-2 border-gray-200 border-solid rounded-2xl"></div>
         <div>
           <div className="flex flex-row">
-            <div className="m-4 text-gray-600 font-semibold">고객명</div>
+            <div className="m-4 text-gray-600 font-semibold w-14">고객명</div>
             <div className="m-4 font-semibold">000</div>
           </div>
           <div className="flex flex-row">
-            <div className="m-4 text-gray-600 font-semibold">비밀번호</div>
+            <div className="m-4 text-gray-600 font-semibold w-14">비밀번호</div>
             <div className="m-4 font-semibold">*********</div>
           </div>
           <div className="flex flex-row">
-            <div className="m-4 text-gray-600 font-semibold">이메일</div>
+            <div className="m-4 text-gray-600 font-semibold w-14">이메일</div>
             <div className="m-4 font-semibold">qawe@wse.com</div>
           </div>
           <div className="flex flex-row">
-            <div className="m-4 text-gray-600 font-semibold">연락처</div>
+            <div className="m-4 text-gray-600 font-semibold w-14">연락처</div>
             <div className="m-4 font-semibold">010-1234-5678</div>
           </div>
         </div>
         <div className="border-t-2 border-gray-200 border-solid rounded-2xl"></div>
         <div>
           <div className="flex flex-row">
-            <div className="m-4 text-gray-600 font-semibold">수령인</div>
+            <div className="m-4 text-gray-600 font-semibold w-14">수령인</div>
             <div className="m-4 font-semibold">000</div>
           </div>
           <div className="flex flex-row">
-            <div className="m-4 text-gray-600 font-semibold">주소</div>
+            <div className="m-4 text-gray-600 font-semibold w-14">주소</div>
             <div className="m-4 mr-4 font-semibold">
               서울시 00구 00동 00-00 XX아파트 000동 0000호
             </div>
           </div>
           <div className="flex flex-row">
-            <div className="m-4 text-gray-600 font-semibold">연락처</div>
+            <div className="m-4 text-gray-600 font-semibold w-14">연락처</div>
             <div className="m-4 font-semibold">010-1234-5678</div>
           </div>
         </div>

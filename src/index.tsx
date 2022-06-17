@@ -5,9 +5,10 @@ import '../src/plugins/bridge';
 import App from './App';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
+import { Navigation } from './components/Navigation'
 
 const client = new QueryClient();
-
+console.log(client.getQueryData);
 ReactDOM.render(
   <React.StrictMode>
     <QueryClientProvider client={client}>

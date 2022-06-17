@@ -16,7 +16,7 @@ export const SignupPage = () => {
       <Switch>
         <Route path="/" component={Router} />
       </Switch>
-      <div className="bg-white h-full w-full px-5 pt-6 pb-20 overflow-y-auto">
+      <div className="bg-white  w-full px-5 pt-6 pb-20 overflow-y-auto">
         <div className="m-4">
           <div className="text-3xl font-bold mb-10 text-center">Sign up</div>
           <div className="space-y-2">

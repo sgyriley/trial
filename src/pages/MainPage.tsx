@@ -10,7 +10,7 @@ export const MainPage = () => {
       <Route path="/" component={Router} />
     </Switch>
     <div>
-      <div className="bg-white h-full w-full px-5 pt-6 pb-20 overflow-y-auto">
+      <div className="bg-white  w-full px-5 pt-6 pb-20 overflow-y-auto">
         <div className="mb-3">
           <h1 className="text-3xl font-bold text-center">
           <p className="italic ...">rentrain</p></h1>

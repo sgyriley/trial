@@ -20,7 +20,7 @@ export const Avatar: FC<AvatarProps> = ({
   ) : (
     <span className={`avatar-default ${className}`}>
       <svg
-        className="w-full h-full text-gray-300"
+        className="w-full text-gray-300"
         fill="currentColor"
         viewBox="0 0 24 24"
       >
