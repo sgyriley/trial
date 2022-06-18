@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { TextField } from '../components/TextField';
-import data from '../db/data.json';
+
 import { useHistory } from 'react-router-dom';
+import axios from 'axios';
 
 export const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const { push, replace } = useHistory();
 
-  const users = data.users;
+ 
 
   const checkUser = () => {
     if (email === '' || password === '') {
@@ -16,19 +17,25 @@ export const LoginPage = () => {
       return;
     }
 
-    for (let i = 0; i < users.length; i++) {
-      if (email === users[i].email && password === users[i].password) {
-        alert('로그인 성공');
-        push('/main');
-        return;
-      } else if (email === users[i].email && password !== users[i].password) {
-        alert('비밀번호가 틀립니다');
-        return;
-      }
-    }
-    alert('로그인 실패');
+    axios
+  .post('http://localhost:1337/api/auth/local', {
+    identifier: email,
+    password: password,
+  })
+  .then((response) => {
+    // Handle success.
+    console.log('Well done!');
+    console.log('User token', response.data.jwt);
+    localStorage.setItem("token", response.data.token);
+    push("/");
+  })
+  .catch((error) => {
+    // Handle error.
+    console.log('An error occurred:', error.response);
+    alert('아이다와 비밀번호를 다시 확인해주세요.');
+    });
   };
-
+  
   return (
     <div className="bg-white  w-full px-5 pt-6 pb-20 overflow-y-auto">
       <div className="m-4">

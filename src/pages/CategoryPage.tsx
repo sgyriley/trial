@@ -96,7 +96,7 @@ export const CategoryPage = () => {
 
             <div>
               <img
-                src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8c3RhaXJzJTIwd29ya291dHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRByTOy5Z9Waw5yti76rpefCu48BTKnhqT4wYQkV-9WmA&s"
                 alt=""
                 className="w-24 h-24 object-cover rounded-full"
               />

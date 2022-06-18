@@ -13,7 +13,7 @@ export const Navigation: FC<NaviProps> = ({ children, className = '', ...props }
       <div className="bg-white absolute bottom-0 w-full border-t border-gray-200 flex">
         <a
           href="/main"
-          className="flex flex-grow items-center justify-center p-2 text-indigo-500 hover:text-indigo-500"
+          className="flex flex-grow items-center justify-center p-2 text-gray-500 hover:text-indigo-500"
         >
           <div className="text-center">
             <span className="block h-8 text-3xl leading-8">
