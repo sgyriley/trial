@@ -1,6 +1,9 @@
 import React from 'react';
+import Axios from 'axios';
+import * as config from '../global';
 
 export const MyPage = () => {
+  Axios.get(`${process.env.REACT_APP_SERVER_URL}/users/`)
   return (
     <div className="bg-white  w-full px-5 pt-6 pb-20 overflow-y-auto">
       <div className="space-y-4">

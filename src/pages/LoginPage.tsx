@@ -8,7 +8,6 @@ export const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const { push, replace } = useHistory();
-
  
 
   const checkUser = () => {
@@ -18,16 +17,17 @@ export const LoginPage = () => {
     }
 
     axios
-  .post('http://localhost:1337/api/auth/local', {
+  .post(`${process.env.REACT_APP_SERVER_URL}/auth/local`, {
     identifier: email,
     password: password,
+    Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`
   })
   .then((response) => {
     // Handle success.
     console.log('Well done!');
     console.log('User token', response.data.jwt);
     localStorage.setItem("token", response.data.token);
-    push("/");
+    push("/main");
   })
   .catch((error) => {
     // Handle error.

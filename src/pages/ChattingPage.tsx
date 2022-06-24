@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Chat } from '../components/Chat';
 export const ChattingPage = () => {
+  const [messages, setMessages] = useState([]);
   return (
+  
     <>
       <div className="bg-white h-full w-full px-5 pt-6 pb-20 overflow-y-auto">
         <Chat isMe='yes'>

@@ -6,10 +6,9 @@ import { SignupPage } from './SignupPage';
 import { PartnerPage } from './PartnerPage';
 import { MainPage } from './MainPage';
 import { CategoryPage } from './CategoryPage';
-import { YogaBallPage } from './YogaBallPage';
 import { ChattingPage } from './ChattingPage';
 import { SearchPage } from './SearchPage';
-import { DumbBellPage } from './DumbBellPage';
+import { CategoryDetailPage } from './CategoryDetailPage';
 import { MyPage } from './MyPage';
 import { Navigation } from '../components/Navigation'
 
@@ -25,10 +24,7 @@ export const Router = () => {
         <Navigation>
           <Route path="/main" component={MainPage} />
           <Route path="/category" component={CategoryPage} />
-          <Route path="/yogaball" component={YogaBallPage} />
-          <Route path="/search" component={SearchPage} />
-          <Route path='/mypage' component={MyPage} />
-          <Route path="/dumbbell" component={DumbBellPage} />
+          <Route path="/categories/:id" component={CategoryDetailPage} />
         </Navigation>
         <Route path="/">
           <Redirect to="/" />

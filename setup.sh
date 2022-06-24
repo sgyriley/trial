@@ -52,7 +52,7 @@ rm -rf .git
 #
 cd "$STARTER_DIR_PATH/starter-api"
 find . -name '*.json' -print0 | xargs -0 sed -i "" "s/starter/$prjName/g"
-cp .env.example .env
+cp .env.development .env
 [ -n "$apiRepoUrl" ] && add_repository "$apiRepoUrl"
 
 
@@ -62,7 +62,7 @@ cp .env.example .env
 cd "$STARTER_DIR_PATH/starter-web"
 find . -name '*.json' -print0 | xargs -0 sed -i "" "s/starter/$prjName/g"
 find . -name '*.html' -print0 | xargs -0 sed -i "" "s/starter/$prjName/g"
-cp .env.example .env
+cp .env.development .env
 [ -n "$webRepoUrl" ] && add_repository "$webRepoUrl"
 
 

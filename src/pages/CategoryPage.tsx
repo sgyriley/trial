@@ -1,111 +1,52 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Router, Switch } from 'react-router-dom';
 import { ScrollToTop } from '../components/ScrollToTop';
-
+import Axios from 'axios';
+import { config } from '../global';
 
 export const CategoryPage = () => {
+  const [values, setValues] = useState([]);
+  useEffect(() => {
+    const v = Axios.get(
+      `${process.env.REACT_APP_SERVER_URL}/categories?populate=*`,
+      config
+    )
+      .then((response) => {
+        setValues(response.data.data);
+        console.log(response.data.data);
+      })
+      .catch((error) => console.log(error));
+  }, []);
   return (
     <BrowserRouter>
-    <ScrollToTop />
-    <Switch>
-      <Route path="/" component={Router} />
-    </Switch>
-    <div className="space-y-4">
-      <div className="text-3xl font-bold mb-14">Category</div>
+      <ScrollToTop />
+      <Switch>
+        <Route path="/" component={Router} />
+      </Switch>
+      <div className="space-y-4">
+        <div className="text-3xl font-bold mb-14">Category</div>
 
-
-<a href=""></a>
-      <div>
-        <div className="flex flex-col space-y-12">
-          <div className="flex flex-row space-x-6">
-            <div>
-              <img
-                src="https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2960&q=80"
-                alt=""
-                className="w-24 h-24 object-cover rounded-full"
-              />
-              <div className="font-bold mt-2 text-center">YOGA MAT</div>
-            </div>
-
-            <a href="/dumbbell">
-            <div>
-              <img
-                src="https://images.unsplash.com/photo-1641582858581-7eb78baec60d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1914&q=80"
-                alt=""
-                className="w-24 h-24 object-cover rounded-full"
-              />
-              <div className="font-bold mt-2 text-center">DUMB BELL</div>
-            </div>
-            </a>
-
-            <a href="/yogaball">
-            <div>
-              <div>
-                <img
-                  src="https://images.unsplash.com/photo-1522898467493-49726bf28798?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
-                  alt=""
-                  className="w-24 h-24 object-cover rounded-full"
-                />
-                <div className="font-bold mt-2 text-center">YOGA BALL</div>
-              </div>
-            </div>
-            </a>
-          </div>
-            
-            
-
-          <div className="flex flex-row space-x-6">
-            <div>
-              <img
-                src="https://images.unsplash.com/photo-1605021272777-72805ea0c9c8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2775&q=80"
-                alt=""
-                className="w-24 h-24 object-cover rounded-full"
-              />
-              <div className="font-bold mt-2 text-center">HULA HOOP</div>
-            </div>
-
-            <div>
-              <img
-                src="https://images.unsplash.com/photo-1599447291850-9ea36b0a3d66?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OTd8fGZsZXhpYmxlJTIwYmFsbHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60"
-                alt=""
-                className="w-24 h-24 object-cover rounded-full"
-              />
-              <div className="font-bold mt-2 text-center">FOAM ROLLER</div>
-            </div>
-
-            <div>
-              <img
-                src="https://images.unsplash.com/photo-1527933053326-89d1746b76b9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8c3RyZXRjaGluZyUyMGJhbmR8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
-                alt=""
-                className="w-24 h-24 object-cover rounded-full"
-              />
-              <div className="font-bold mt-2 text-center">STRETCHING</div>
-              <div className="font-bold text-center">BAND</div>
-            </div>
-          </div>
-
-          <div className="flex flex-row space-x-6">
-            <div>
-              <img
-                src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHVzaHVwfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
-                alt=""
-                className="w-24 h-24 object-cover rounded-full"
-              />
-              <div className="font-bold mt-2 text-center">PUSH-UP BAR</div>
-            </div>
-
-            <div>
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRByTOy5Z9Waw5yti76rpefCu48BTKnhqT4wYQkV-9WmA&s"
-                alt=""
-                className="w-24 h-24 object-cover rounded-full"
-              />
-              <div className="font-bold mt-2 text-center">STEPPER</div>
-            </div>
+        <a href=""></a>
+        <div>
+          <div className="flex">
+            {values.map((value: any) => {
+              console.log(value);
+              return (
+                <a href={'/categories/' + value.attributes.title} className="m-4 flex-auto">
+                  <div>
+                    <img
+                      src={value.attributes.image.data.attributes.alternativeText}
+                      alt=""
+                      className="w-24 h-24 object-cover rounded-full"
+                    />
+                    <div className="font-bold mt-2 text-center">{value.attributes.title}</div>
+                  </div>
+                </a>
+              );
+            })}
           </div>
         </div>
       </div>
-    </div>
     </BrowserRouter>
   );
 };
