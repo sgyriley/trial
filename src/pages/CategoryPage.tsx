@@ -28,11 +28,11 @@ export const CategoryPage = () => {
 
         <a href=""></a>
         <div>
-          <div className="flex">
+          <div className="flex flex-wrap justify-center">
             {values.map((value: any) => {
               console.log(value);
               return (
-                <a href={'/categories/' + value.attributes.title} className="m-4 flex-auto">
+                <a href={'/categories/' + value.attributes.title} className="w-24 m-4">
                   <div>
                     <img
                       src={value.attributes.image.data.attributes.alternativeText}
