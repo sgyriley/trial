@@ -37,19 +37,7 @@ export const Navigation: FC<NaviProps> = ({ children, className = '', ...props }
             <span className="block text-xs leading-none">Categories</span>
           </div>
         </a>
-        <a
-          href="/search"
-          className="flex flex-grow items-center justify-center p-2 text-gray-500 hover:text-indigo-500"
-        >
-          <div className="text-center">
-            <span className="block h-8 text-3xl leading-8">
-              <i className="mdi mdi-star-outline ">
-                <SearchIcon className="mx-auto" />
-              </i>
-            </span>
-            <span className="block text-xs leading-none">Search</span>
-          </div>
-        </a>
+        
         <a
           href="/mypage"
           className="flex flex-grow items-center justify-center p-2 text-gray-500 hover:text-indigo-500"

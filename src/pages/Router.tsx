@@ -9,8 +9,11 @@ import { CategoryPage } from './CategoryPage';
 import { ChattingPage } from './ChattingPage';
 import { SearchPage } from './SearchPage';
 import { CategoryDetailPage } from './CategoryDetailPage';
+import { MessagePage } from './MessagePage';
 import { MyPage } from './MyPage';
-import { Navigation } from '../components/Navigation'
+import { Navigation } from '../components/Navigation';
+import { CategoryDetailAdd } from './CategoryDetailAdd';
+
 
 export const Router = () => {
   return (
@@ -23,8 +26,11 @@ export const Router = () => {
         <Route path="/chat" component={ChattingPage} />
         <Navigation>
           <Route path="/main" component={MainPage} />
+          <Route path="/mypage" component={MyPage} />
           <Route path="/category" component={CategoryPage} />
           <Route path="/categories/:id" component={CategoryDetailPage} />
+          <Route path="/message/:id" component={MessagePage} />
+          <Route path="/addList/:id" component={CategoryDetailAdd} />
         </Navigation>
         <Route path="/">
           <Redirect to="/" />

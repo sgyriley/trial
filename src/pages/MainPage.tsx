@@ -27,7 +27,7 @@ export const MainPage = () => {
           </div>
           <div className="mb-5">
             <a
-              href="#"
+              href="/category"
               className="block rounded-lg relative p-5 transform transition-all duration-300 scale-10 hover:scale-95"
               style={{
                 background:
@@ -66,7 +66,7 @@ export const MainPage = () => {
           </div>
           <div className="mb-5">
             <a
-              href="/dumbbell"
+              href="/category"
               className="block rounded-lg relative p-5 transform transition-all duration-300 scale-100 hover:scale-95"
               style={{
                 background:
@@ -111,7 +111,7 @@ export const MainPage = () => {
           <div className="flex -mx-1 mb-5">
             <div className="w-1/2 px-1">
               <a
-                href="/dumbbell"
+                href="/category"
                 className="block mb-2 p-5 rounded overflow-hidden transform transition-all duration-300 scale-100 hover:scale-95"
                 style={{
                   background:
@@ -125,7 +125,7 @@ export const MainPage = () => {
                 </h3>
               </a>
               <a
-                href="/dumbbell"
+                href="/category"
                 className="block mb-2 p-5 rounded overflow-hidden transform transition-all duration-300 scale-100 hover:scale-95"
                 style={{
                   background:
@@ -141,7 +141,7 @@ export const MainPage = () => {
             </div>
             <div className="w-1/2 px-1">
               <a
-                href="#"
+                href="/category"
                 className="block mb-2 p-5 rounded overflow-hidden transform transition-all duration-300 scale-100 hover:scale-95"
                 style={{
                   background:
@@ -155,7 +155,7 @@ export const MainPage = () => {
                 </h3>
               </a>
               <a
-                href="/yogaball"
+                href="/category"
                 className="block mb-2 p-5 rounded overflow-hidden transform transition-all duration-300 scale-100 hover:scale-95"
                 style={{
                   background:
@@ -175,7 +175,7 @@ export const MainPage = () => {
           </div>
           <div>
             <a
-              href="/dumbbell"
+              href="/category"
               className="flex w-full transform transition-all duration-300 scale-100 hover:scale-95"
             >
               <div
@@ -210,7 +210,7 @@ export const MainPage = () => {
           <hr className="border-gray-200 my-3" />
           <div>
             <a
-              href="/dumbbell"
+              href="/category"
               className="flex w-full transform transition-all duration-300 scale-100 hover:scale-95"
             >
               <div
@@ -245,7 +245,7 @@ export const MainPage = () => {
           <hr className="border-gray-200 my-3" />
           <div>
             <a
-              href="#"
+              href="/category"
               className="flex w-full transform transition-all duration-300 scale-100 hover:scale-95"
             >
               <div

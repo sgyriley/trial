@@ -8,7 +8,6 @@ export const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const { push, replace } = useHistory();
- 
 
   const checkUser = () => {
     if (email === '' || password === '') {
@@ -17,25 +16,26 @@ export const LoginPage = () => {
     }
 
     axios
-  .post(`${process.env.REACT_APP_SERVER_URL}/auth/local`, {
-    identifier: email,
-    password: password,
-    Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`
-  })
-  .then((response) => {
-    // Handle success.
-    console.log('Well done!');
-    console.log('User token', response.data.jwt);
-    localStorage.setItem("token", response.data.token);
-    push("/main");
-  })
-  .catch((error) => {
-    // Handle error.
-    console.log('An error occurred:', error.response);
-    alert('아이다와 비밀번호를 다시 확인해주세요.');
-    });
+      .post(`${process.env.REACT_APP_SERVER_URL}/auth/local`, {
+        identifier: email,
+        password: password,
+        Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
+      })
+      .then((response) => {
+        // Handle success.
+        console.log('Well done!');
+        console.log('User token', response.data.jwt);
+        localStorage.setItem('token', response.data.jwt);
+        localStorage.setItem('userid', response.data.user.id);
+        push('/main');
+      })
+      .catch((error) => {
+        // Handle error.
+        console.log('An error occurred:', error.response);
+        alert('아이다와 비밀번호를 다시 확인해주세요.');
+      });
   };
-  
+
   return (
     <div className="bg-white  w-full px-5 pt-6 pb-20 overflow-y-auto">
       <div className="m-4">
@@ -71,9 +71,9 @@ export const LoginPage = () => {
             로그인
           </div>
           <a href="/signup">
-          <div className=" rounded-md text-center py-4 text-gray-800 border border-gray-800 mt-2">
-            회원가입
-          </div>
+            <div className=" rounded-md text-center py-4 text-gray-800 border border-gray-800 mt-2">
+              회원가입
+            </div>
           </a>
         </div>
       </div>

@@ -21,14 +21,6 @@
       "required": true,
       "default": 0
     },
-    "thumbnail": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
-      "allowedTypes": [
-        "images"
-      ]
-    },
     "category": {
       "type": "relation",
       "relation": "manyToOne",
@@ -45,11 +37,19 @@
       "relation": "oneToOne",
       "target": "plugin::users-permissions.user"
     },
-    "rooms": {
+    "messages": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::room.room",
+      "target": "api::message.message",
       "mappedBy": "list"
+    },
+    "thumbnail": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
     }
   }
 }

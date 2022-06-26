@@ -17,25 +17,23 @@ export const SignupPage = () => {
   const [phonenumber, setPhonenumber] = useState('');
   const { push } = useHistory();
   const register = () => {
-    Axios
-      .post(`${process.env.REACT_APP_SERVER_URL}/auth/local/register`, {
-        username: name,
-        email: email,
-        password: password,
-        phoneNumber: phonenumber,
-        role: "Public",
-        blocked: false,
-        confirmed: true,
-        Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
-      })
+    Axios.post(`${process.env.REACT_APP_SERVER_URL}/auth/local/register`, {
+      username: name,
+      email: email,
+      password: password,
+      phoneNumber: phonenumber,
+      role: 'Public',
+      blocked: false,
+      confirmed: true,
+      Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
+    })
       .then((response) => {
         // Handle success.
         console.log('Well done!');
         console.log('User profile', response.data.user);
         console.log('User token', response.data.jwt);
         localStorage.setItem('token', response.data.jwt);
-        localStorage.setItem('username', response.data.user.username);
-
+        localStorage.setItem('userid', response.data.user.id);
         push('/login');
       })
       .catch((error) => {

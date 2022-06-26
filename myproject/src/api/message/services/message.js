@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * room service.
+ * message service.
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::room.room');
+module.exports = createCoreService('api::message.message');
